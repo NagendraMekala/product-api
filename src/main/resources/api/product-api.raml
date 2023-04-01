@@ -1,0 +1,16 @@
+#%RAML 1.0
+title: product-api
+description: This api is used to get the product information
+/products:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "productId": 12345,
+                "productName": "Lenovo think pad",
+                "productOwner": "Lenovo",
+                "productDescription": "Thinkpad T480"
+              }
