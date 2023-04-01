@@ -14,7 +14,7 @@ output application/json
   productId: 12345,
   productName: "Lenovo think pad",
   productOwner: "Lenovo",
-  productDescription: "Thinkpad T480"
+  productDescription: "Thinkpad T480 with touch pad"
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
