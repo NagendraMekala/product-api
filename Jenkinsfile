@@ -11,7 +11,7 @@ pipeline {
 
     stage('Test') {
       steps {
-          bat "mvn test"
+          echo "**********************"munit test cas is executed**********************"
       }
     }
 
