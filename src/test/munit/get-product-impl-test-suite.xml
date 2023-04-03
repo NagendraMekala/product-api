@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="get-product-impl-test-suite.xml" />
+	<munit:test name="get-product-impl-test-suite-get:\products:product-api-configTest" doc:id="bad38ba7-dacf-44e7-bf5d-1936719009bb" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\products:product-api-config" doc:id="c8ba6e5a-00a0-4a1c-97db-c00ec67cf445" name="get:\products:product-api-config"/>
+		</munit:execution>
+		<munit:validation >
+			<logger level="INFO" doc:name="Logger" doc:id="539d2c07-50be-4d4c-a746-c7919638dc8f" message="#[payload]"/>
+			<munit-tools:assert doc:name="Assert not null expression" doc:id="9e5f95f6-c0e2-4cf2-b91e-ed239f8f3bde" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
