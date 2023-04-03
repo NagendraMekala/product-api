@@ -1,8 +1,10 @@
 pipeline {
 
   agent any
-   M2SETTINGS = "C:\\Users\\lenovo\\.m2\\settings.xml"
-
+  environment {
+  M2SETTINGS = "C:\\Users\\lenovo\\.m2\\settings.xml"
+  }
+  
   stages {
     stage('Build') {
       steps {
