@@ -2,7 +2,8 @@ pipeline {
 
   agent any
   environment {
-  M2SETTINGS = "C:\\Users\\lenovo\\.m2\\settings.xml"
+      ANYPOINT_CREDETIALS = credentials('Anypoint-Credential')
+      M2SETTINGS = "C:\\Users\\lenovo\\.m2\\settings.xml"
   }
   
   stages {
@@ -19,8 +20,13 @@ pipeline {
     }
 
      stage('Deployment') {
+      environment{
+        client_id=credentials('dev-client-id')
+        client_secret=credentials('dev_client_secret')
+        
+      }
       steps {
-            bat 'mvn -U -V -e -B -DskipTests -gs %M2SETTINGS% -Pdev deploy -DmuleDeploy'
+            bat 'mvn -U -V -e -B -DskipTests -gs %M2SETTINGS% -Pdev deploy -DmuleDeploy -Danypoint.username="%ANYPOINT_CREDETIALS_USR%" -Danypoint.password="%ANYPOINT_CREDETIALS_PSW%" -Danypoint.platform.client_id="%client_id%" -Danypoint.platform.client_secret="%client_secret%"'
       }
     }
   }
